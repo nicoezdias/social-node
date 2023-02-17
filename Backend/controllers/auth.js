@@ -61,7 +61,7 @@ exports.login = (req, res, next) => {
 					email: loadedUser.email,
 					userId: loadedUser._id.toString(),
 				},
-				'somesupersecret',
+				process.env.JWT_KEY,
 				{ expiresIn: '1h' }
 			);
 			res.status(200).json({ token: token, userId: loadedUser._id.toString() });
