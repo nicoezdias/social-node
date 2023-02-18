@@ -96,10 +96,7 @@ class Feed extends Component {
 				if (res.status !== 200 && res.status !== 201) {
 					throw new Error("Can't update status!");
 				}
-				return res.json();
-			})
-			.then((resData) => {
-				console.log(resData);
+				console.log(res.status);
 			})
 			.catch(this.catchError);
 	};
